@@ -1,0 +1,43 @@
+/* .formulario{
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 10px;
+    width: 450px;
+    height: 250px;
+} */
+.crear-cirujano-form {
+    border: 1px solid rgba(43, 42, 42, 0.205);
+    border-radius: 10px;
+ 
+    display: flex;
+    flex-direction: row;
+    margin: 10px auto;
+  }
+  
+  .crear-cirujano-form label {
+    margin-bottom: 5px;
+    margin: 10px 15px 20px 10px;
+    font-weight: bold;
+  }
+  
+  .crear-cirujano-form input {
+    padding: 8px;
+    margin: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .crear-cirujano-form button {
+    margin: 12px ;
+    height: 30px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .crear-cirujano-form button:hover {
+    background-color: #0056b3;
+  }
+  

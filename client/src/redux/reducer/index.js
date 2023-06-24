@@ -10,6 +10,10 @@ function rootreducer(state = initialState, action) {
                 ...state,
                 profesionales: action.payload
             }
+            case 'POST_CIRUJANO':
+                return{
+                    ...state,
+                }
         case 'GET_PACIENTES':
             return{
                 ...state,
