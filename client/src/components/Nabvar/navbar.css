@@ -9,10 +9,31 @@
 
     .agenda-cx{
       text-align: center;
-      color:rgb(255, 255, 255);
+      color:rgb(14, 13, 13);
       text-decoration: none;
-      border: 1px solid red;
+     
       margin:25px;
+    }
+
+    .btn-agenda {
+      display: inline-block;
+    }
+    .btn-agenda a{
+      text-decoration: none;
+    }
+    
+    .agenda-cx {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: rgb(135, 135, 214);
+      color: rgb(6, 6, 6);
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    
+    .agenda-cx:hover {
+      background-color: rgb(94, 94, 128);
+      color: aliceblue;
     }
   /* .navbar-button {
     display: inline-block;

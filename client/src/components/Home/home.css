@@ -35,6 +35,11 @@ body {
   /* border: 1px solid red; */
   margin: 10px;
   padding: 15px;
+  font-size: 30px;
+}
+.espacio ul{
+  border: 1px solid rgba(43, 42, 42, 0.205);
+  border-radius: 10px;
 }
 
 .button-link {
@@ -54,19 +59,7 @@ body {
 .button-link:hover {
   background-color: #0056b3;
 }
-/* .button-link-e{
-  display: block;
-  margin:15px;
-  width: 150px;
-  padding: 10px;
-  background-color: #ff0000;
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  cursor: pointer;
-} */
+
 .opciones ul {
   list-style: none;
   padding: 0;
@@ -79,66 +72,3 @@ body {
 .opciones li a{
   text-decoration: none;
 }
-.custom-calendar {
-    max-width: 250px;
-    margin: 0 auto;
-  }
-  
-  .custom-calendar .react-calendar__tile {
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .custom-calendar .react-calendar__tile--active {
-    background-color: #76808c;
-    color: #fff;
-  }
-  
-  .custom-calendar .react-calendar__navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .custom-calendar .react-calendar__navigation button {
-    background-color: #9faebe;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .custom-calendar .react-calendar__navigation button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  
-  .custom-calendar .react-calendar__navigation button:hover {
-    background-color: #0056b3;
-  }
-  
-  .custom-calendar .react-calendar__month-view__weekdays {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .custom-calendar .react-calendar__month-view__weekdays__weekday {
-    color: #007bff;
-    font-weight: bold;
-  }
-  
-  .custom-calendar .react-calendar__month-view__days__day--neighboringMonth {
-    color: #ccc;
-  }
-  
-  .custom-calendar .react-calendar__tile--now {
-    background-color: #f5f5f5;
-    font-weight: bold;
-  }
-  
-  .custom-calendar .react-calendar__tile--now:enabled:hover {
-    background-color: #e0e0e0;
-    color: #000;
-  }

@@ -10,8 +10,8 @@ export default function Nabvar() {
       <div className="navbar">
         <img src={logo} alt="Img Not found" width="250px" />
 
-        <div>
-          <select>
+        <div className="btn-agenda">
+          {/* <select>
             <option value="allSala">Salas de Cirugia</option>
             <option value="sala1">Sala 1</option>
             <option value="sala2">Sala 2</option>
@@ -37,9 +37,9 @@ export default function Nabvar() {
             <option value="hab9">Habitacion 209</option>
             <option value="hab10">Habitacion 210</option>
             <option value="hab11">Habitacion 211</option>
-          </select>
-          <Link to="/agenda" className="agenda-cx">
-            Programacion CX
+          </select> */}
+          <Link to="/agenda" className="agenda-cx"><a href="">Agenda CX</a>
+            
           </Link>
         </div>
       </div>

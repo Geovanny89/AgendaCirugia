@@ -2,16 +2,17 @@
 import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { postCirujanos } from '../../../redux/action';
+import { putProfesionales } from '../../../redux/action';
 import './crearMedico.css'
 
-export default function CrearCirujano() {
+export default function ActualizarCirujano({id}) {
   const dispatch = useDispatch();
   const [input, setInput] = useState({
     name: '',
     lastName: '',
     email: '',
   });
+  
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -19,8 +20,9 @@ export default function CrearCirujano() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postCirujanos(input));
+    dispatch(putProfesionales(id,input));
     setInput({ name: '', lastName: '', email: '' });
+ 
   };
 
   return (
@@ -58,7 +60,9 @@ export default function CrearCirujano() {
             onChange={handleChange}
           />
         </div>
-        <button type="submit">Crear Cirujano</button>
+        
+        <button type="submit">Actualizar</button>
+        <button >Cerrar</button>
       </form>
     </div>
   );
