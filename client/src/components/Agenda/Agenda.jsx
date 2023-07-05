@@ -61,13 +61,13 @@ export default function Agenda() {
 
           </div>
         </div>
-        <h1>Agenda del día</h1>
+        <h1>Agenda</h1>
 
-        <a href="/">Volver</a>
+        <a className="button" href="/">Volver</a>
       </div>
       <hr />
       <div className="vista-card">
-      
+
         {filteredPacientes.length > 0 ? (
           // Mostrar las tarjetas filtradas ordenadas por hora
           filteredPacientes
@@ -82,10 +82,11 @@ export default function Agenda() {
                 key={el.id}
                 name={el.name}
                 lastName={el.lastName}
-                cirujanoId={el.cirujano.name + " " + el.cirujano.lastName}
-                procedimientId={el.procedimiento.name}
-                salaId={el.sala.name}
-                habitacionId={el.habitacion.name}
+                cirujanoId={el.cirujano ? el.cirujano.name + " " + el.cirujano.lastName : "Cirujano no disponible"}
+                procedimientId={el.procedimiento ? el.procedimiento.name : "Procedimiento no disponible"}
+                salaId={el.sala ? el.sala.name : "Sala no disponible"}
+                habitacionId={el.habitacion ? el.habitacion.name : "Habitación no disponible"}
+
                 day={el.day}
                 month={el.month}
                 year={el.year}

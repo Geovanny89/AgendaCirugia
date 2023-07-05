@@ -4,13 +4,73 @@ body {
 }
 
 .navegacion {
+   /* background-color: rgb(187, 181, 181); 
+   */
+  margin: 10px;
+  padding: 10px;
+ 
+}
+.navegacion-vista{
   /* background-color: rgb(187, 181, 181); */
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: row;
+ 
 }
 .menu {
   margin: 15px;
 }
+.habitaciones {
+  margin: 15px;
+}
+.paciente{
+  margin: 15px;
+}
+.procedimientos {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  
+}
+.procemiento-card{
+ 
+  display: flex ;
+  flex-direction: row;
+  width: auto;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.procedimineto-card-delete{
+  display: flex;
+  align-items: end;
+  margin-left: auto;
+}
+
+.procedimineto-actualizar-btn{
+  border: 1px solid rgb(128, 128, 128);
+  background-color: #85b4e6;
+  border-radius: 3px;
+  font-size: 20px;
+  color: #010101;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 800px;
+}
+.procedimiento-delete-btn{
+  border: 1px solid rgb(128, 128, 128);
+  background-color: #ff3700;
+  font-size: 20px;
+  border-radius: 3px;
+  color: #0d0e0e;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
 .header-container {
   display: flex;
   justify-content: center;
@@ -27,20 +87,59 @@ body {
   border: 1px solid rgb(125, 120, 120);
   background-color: #9faebe;
   border-radius: 5px;
-  width: 95%;
+  width: 280px;
   height: auto;
 }
 
 .espacio {
   /* border: 1px solid red; */
-  margin: 10px;
+  margin: 0px;
   padding: 15px;
   font-size: 30px;
+  width: 100%;
+
 }
 .espacio ul{
   border: 1px solid rgba(43, 42, 42, 0.205);
   border-radius: 10px;
 }
+.espacio ul li a{
+  border: 1px solid red;
+  font-size: 20px;
+  margin:55px;
+  
+  padding: 0px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.espacio-habitaciones{
+  /* border: 1px solid rgb(176, 166, 166); */
+  margin: 0px;
+  padding: 15px;
+  font-size: 30px;
+
+}
+.habitacion-card {
+  /* border: 1px solid rgb(143, 139, 139); */
+  border-radius: 5px;
+  background-color: #dee1e7;
+}
+.habitacion-seleccionada {
+  border: 2px solid blue;
+}
+
+.cirujanos-list{
+  list-style-type: none;
+  border: 1px solid gray;
+  margin: 5px;
+  font-size: 35px;
+}
+
 
 .button-link {
   display: block;
@@ -71,4 +170,157 @@ body {
 }
 .opciones li a{
   text-decoration: none;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.card {
+  /* border: 1px solid red; */
+  display: flex ;
+  flex-direction: row;
+  width: auto;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.card-delete {
+
+  display: flex;
+  align-items: end;
+  margin-left: auto;
+  /* width: 300px; */
+
+  
+}
+
+
+.actualizar-btn {
+  border: 1px solid rgb(128, 128, 128);
+  background-color: #85b4e6;
+  border-radius: 3px;
+  font-size: 20px;
+  color: #e0e3e5;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 800px;
+}
+.eliminar-btn{
+  border: 1px solid rgb(128, 128, 128);
+  background-color: #ff3700;
+  font-size: 20px;
+  border-radius: 3px;
+  color: #e0e3e5;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.eliminar-btn:hover,
+.actualizar-btn:hover {
+  color: #0056b3;
+}
+
+.eliminar-btn,
+.actualizar-btn {
+  color: #1b1c1e;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+.actualizar-btn:hover {
+  background-color: #8e9cab;
+  color: #070808;
+}
+.eliminar-btn:hover{
+  background-color: #8e9cab;
+  color: #070808;
+}
+.habitacion-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.habitacion-card p {
+  margin: 0;
+}
+
+.habitacion-actions {
+  display: flex;
+}
+
+.habitacion-actions button {
+  margin-left: 10px;
+}
+.paciente {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  
+}
+.paciente-nombre{
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+}
+.paciente-card{
+ 
+  display: flex ;
+  flex-direction: row;
+  width: 90%;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.cards-actions{
+  border: 1px solid rgb(128, 128, 128);
+  background-color: #ff3700;
+  font-size: 20px;
+  border-radius: 3px;
+  color: #0d0e0e;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.paciente-actualizar-btn{
+  border: 1px solid rgb(128, 128, 128);
+  background-color: #85b4e6;
+  border-radius: 3px;
+  font-size: 20px;
+  color: #010101;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 800px;
+}
+.paciente-eliminar-btn{
+  border: 1px solid rgb(128, 128, 128);
+  background-color: #ff3700;
+  font-size: 20px;
+  border-radius: 3px;
+  color: #0d0e0e;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 10px;
 }

@@ -22,7 +22,7 @@ export default function CrearCirujano() {
     dispatch(postCirujanos(input));
     setInput({ name: '', lastName: '', email: '' });
   };
-
+  
   return (
     <div className='formulario' >
       
@@ -59,6 +59,8 @@ export default function CrearCirujano() {
           />
         </div>
         <button type="submit">Crear Cirujano</button>
+        <a className='btn link-button' href="/">Cerrar</a>
+       
       </form>
     </div>
   );

@@ -62,7 +62,7 @@ export default function ActualizarCirujano({id}) {
         </div>
         
         <button type="submit">Actualizar</button>
-        <button >Cerrar</button>
+       <a href="/">Cerrar</a>
       </form>
     </div>
   );

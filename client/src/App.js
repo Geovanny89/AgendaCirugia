@@ -3,6 +3,7 @@ import Home from './components/Home/Home';
 import Agenda from './components/Agenda/Agenda';
 import CrearMedico from './components/Crear/Medicos/CrearMedico'
 
+
 function App() {
   return (
     <div className="App">
@@ -10,6 +11,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/agenda' element={<Agenda/>}/>
         <Route path='/crearCirujano' element={<CrearMedico/>}/>
+        
       </Routes>
       
     </div>
