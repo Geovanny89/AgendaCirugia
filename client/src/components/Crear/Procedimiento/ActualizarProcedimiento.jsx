@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { putProcedimientos } from "../../../redux/action";
+import './actualizarProcedimiento.css'
 
-export default function ActualizarProcedimiento({id}) {
+export default function ActualizarProcedimiento({ id }) {
     const dispatch = useDispatch();
     const [procedimientoData, setProcedimientoData] = useState({
         name: '',
@@ -24,8 +25,8 @@ export default function ActualizarProcedimiento({id}) {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <div>
+            <form className="form-procedi" onSubmit={handleSubmit}>
+                <div className="proce-name"> 
                     <label>Nombre:</label>
                     <input
                         type="text"
@@ -34,9 +35,11 @@ export default function ActualizarProcedimiento({id}) {
                         onChange={handleInputChange}
                     />
                 </div>
-                {/* Agrega aquí los demás campos de la habitación que deseas actualizar */}
-                <button type="submit">Actualizar</button>
-                <a href="/">Volver</a>
+                <div className="proce-boton">
+                    <button type="submit">Actualizar</button>
+                    <a href="/">Volver</a>
+
+                </div>
             </form>
         </div>
     )

@@ -1,16 +1,57 @@
 .form-container {
-    max-width: 400px;
+    max-width: 90%;
     margin: 0 auto;
     padding: 20px;
     background-color: #f2f2f2;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
-  
+  .form-name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    
+  }
+  .form-name label{
+    flex: 1;
+    margin-right: 50px;
+  }
+  .form-vista{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .form-vista label{
+    flex: 1;
+    margin-right: 50px;
+  }
+ 
+ .form-vista-sala{
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+ } 
+ .form-vista-sala label{
+  flex: 1;
+  margin-right: 50px;
+}
+.form-vista-fecha{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.form-vista-fecha label{
+  flex: 1;
+  margin-right: 50px;
+}
   .form-container label {
     display: block;
     margin-bottom: 10px;
   }
+  
   
   .form-container input[type="text"],
   .form-container select {
@@ -45,4 +86,24 @@
   .form-container button[type="button"]:hover {
     background-color: #d32f2f;
   }
+  .botones{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  .volver-button {
+    display: inline-block;
+    background-color: #f44336;
+    color: white;
+    /* font-size: 18px; */
+    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0px;
+    text-decoration: none;
+  }
   
+  .volver-button:hover {
+    background-color: #d32f2f;
+  }

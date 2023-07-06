@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from "react-redux";
 import { postHabitaciones } from "../../../redux/action/index";
+import './crearHabitacion.css'
 
 export default function CrearHabitaciones() {
   const [name, setName] = useState("");
@@ -15,19 +16,23 @@ export default function CrearHabitaciones() {
   };
 
   return (
-    <div>
-      <h2>Crear Habitación</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Nombre:
+    <div className='habitacion-crear'>
+      
+      <form className='habitacion-form' onSubmit={handleSubmit}>
+        <label htmlFor='name'>
+          Nombre: 
           <input
             type="text"
+            placeholder='Nombre Habitacion'
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
         </label>
+        <div className='boton-habi'>
         <button type="submit">Crear</button>
-        <a href="/">Cerrar</a>
+        <a className='button-form' href="/">Cerrar</a>
+
+        </div>
       </form>
     </div>
   );

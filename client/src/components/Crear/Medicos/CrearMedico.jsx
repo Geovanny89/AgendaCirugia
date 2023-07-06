@@ -35,7 +35,7 @@ export default function CrearCirujano() {
             value={input.name}
             name="name"
             placeholder="Nombre"
-            onChange={handleChange}
+            onChange={handleChange} 
           />
         </div>
         <div>
@@ -58,8 +58,11 @@ export default function CrearCirujano() {
             onChange={handleChange}
           />
         </div>
-        <button type="submit">Crear Cirujano</button>
-        <a className='btn link-button' href="/">Cerrar</a>
+        <div className='button-form-cx'>
+        <button type="submit">Crear </button>
+        <a className='link-button-cx' href="/">Cerrar</a>
+
+        </div>
        
       </form>
     </div>

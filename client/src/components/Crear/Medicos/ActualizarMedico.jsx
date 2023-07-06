@@ -60,9 +60,11 @@ export default function ActualizarCirujano({id}) {
             onChange={handleChange}
           />
         </div>
-        
+        <div className='button-form-cx'>
         <button type="submit">Actualizar</button>
-       <a href="/">Cerrar</a>
+       <a className='link-button' href="/">Cerrar</a>
+          
+        </div>
       </form>
     </div>
   );

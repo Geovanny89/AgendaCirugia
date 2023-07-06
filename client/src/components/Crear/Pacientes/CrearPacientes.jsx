@@ -66,7 +66,8 @@ export default function CrearPacientes() {
   return (
     <div className='form-container'>
       <form onSubmit={handleSubmit}>
-      <label>
+     <div className='form-name'>
+       <label>
         Nombre:
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
       </label>
@@ -74,6 +75,8 @@ export default function CrearPacientes() {
         Apellido:
         <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
       </label>
+     </div>
+      <div className='form-vista'>
       <label>
         Cirujano:
         <select value={cirujanoId} onChange={(e) => setCirujanoId(e.target.value)}>
@@ -89,7 +92,10 @@ export default function CrearPacientes() {
         Procedimiento:
         <input type="text" value={prodecimientoId} onChange={(e) => setProcedimientoId(e.target.value)} />
       </label>
-      <label>
+      </div>
+      <div className='form-vista-sala'>
+
+      <label >
         Sala:
         <select value={salaId} onChange={(e) => setSalaId(e.target.value)}>
           <option value="">Seleccionar sala</option>
@@ -111,6 +117,9 @@ export default function CrearPacientes() {
           ))}
         </select>
       </label>
+      </div>
+      <div className='form-vista-fecha'>
+
       <label>
         Día:
         <input type="text" value={day} onChange={(e) => setDay(e.target.value)} />
@@ -131,9 +140,13 @@ export default function CrearPacientes() {
         Minuto:
         <input type="text" value={minute} onChange={(e) => setMinute(e.target.value)} />
       </label>
-
-      <button type="submit">Guardar</button>
-      <a href="/">Volver</a>
+      </div>
+          
+          <div className='botones'>
+          <button type="submit">Guardar</button>
+      <a className="volver-button" href="/">Volver</a>
+          </div>
+            
     </form>
     </div>
   );

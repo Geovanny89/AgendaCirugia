@@ -1,0 +1,61 @@
+.form-proce{
+    border: 1px solid rgba(43, 42, 42, 0.205);
+    border-radius: 10px;
+    background-color: rgb(243, 239, 247);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 10px auto;
+}
+.form-proce label{
+    margin-bottom: 5px;
+    margin: 10px 15px 20px 10px;
+    font-weight: bold;
+}
+.form-proce label{
+    flex: 1;
+    margin-right: 50px;
+}
+.form-proce input{
+    padding: 8px;
+    margin: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.boton-proce{
+    display: flex;
+    flex-direction: row;
+}
+
+.boton-proce button{
+height: 33px;
+    width: 70px;
+    background-color: blue;
+    font-size: 15px;
+    color:white;
+    border-radius: 10px;
+    margin: 15px;
+}
+.boton-proce button:hover{
+     background-color: rgb(86, 171, 199);
+}
+.button-cerrar{
+    text-decoration: none;
+    border-radius: 8px;
+    height: 25px;
+    width: 70px;
+    margin-top: 15px;
+    margin-right: 25px;
+    background-color: rgb(130, 130, 236);;
+    color: aliceblue;
+    font-size: 18px;
+    text-align: center; /* Alinea el texto en el centro */
+  padding: 4px 4px 4px 0; /* Añade una separación alrededor del texto */
+  line-height: 1.3;
+    
+}
+.button-cerrar:hover{
+   background-color: rgb(90, 168, 246);
+   border: 1px solid black;
+}

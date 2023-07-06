@@ -1,0 +1,63 @@
+.habitacion-form{
+    border: 1px solid rgba(43, 42, 42, 0.205);
+    border-radius: 10px;
+    background-color: rgb(243, 239, 247);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 10px auto;
+}
+.habitacion-form label{
+    margin-bottom: 5px;
+    margin: 10px 15px 20px 10px;
+    font-weight: bold;
+}
+.habitacion-form label{
+    flex: 1;
+    margin-right: 50px;
+}
+.habitacion-form input{
+    padding: 8px;
+    margin: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.boton-habi{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.boton-habi button{
+    height: 30px;
+    width: 70px;
+    background-color: blue;
+    font-size: 15px;
+    color:white;
+    border-radius: 10px;
+    margin: 15px;
+}
+.boton-habi button:hover{
+    background-color: rgb(86, 171, 199);
+}
+.button-form{
+    text-decoration: none;
+    border-radius: 8px;
+    height: 22px;
+    width: 70px;
+    margin-top: 16px;
+    margin-right: 25px;
+    background-color: rgb(130, 130, 236);
+    color: rgb(22, 22, 22);
+    font-size: 18px;
+    text-align: center; /* Alinea el texto en el centro */
+  padding: 4px 0px 3px 4px; /* Añade una separación alrededor del texto */
+  line-height:1 ;
+    
+}
+
+.button-form:hover{
+   background-color: rgb(90, 168, 246);
+   border: 1px solid black;
+}

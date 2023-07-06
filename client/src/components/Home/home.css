@@ -44,31 +44,33 @@ body {
   font-weight: bold;
   margin-bottom: 20px;
 }
-.procedimineto-card-delete{
+.procedimineto-card-delete {
   display: flex;
   align-items: end;
   margin-left: auto;
 }
 
-.procedimineto-actualizar-btn{
-  border: 1px solid rgb(128, 128, 128);
-  background-color: #85b4e6;
-  border-radius: 3px;
-  font-size: 20px;
-  color: #010101;
-  cursor: pointer;
+.procedimineto-card-delete a{
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 4px;
   text-decoration: none;
-  margin-left: 800px;
+  font-size: 16px;
+}
+
+.procedimineto-actualizar-btn{
+  background-color: rgb(0, 106, 255);
+  color: white;
+  border: 1px solid black;
 }
 .procedimiento-delete-btn{
-  border: 1px solid rgb(128, 128, 128);
-  background-color: #ff3700;
-  font-size: 20px;
-  border-radius: 3px;
-  color: #0d0e0e;
-  cursor: pointer;
-  text-decoration: none;
-  margin-left: 10px;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border: 1px solid black;
+}
+.procedimineto-card-delete a:hover{
+  opacity: 0.8;
 }
 
 .header-container {
@@ -92,7 +94,7 @@ body {
 }
 
 .espacio {
-  /* border: 1px solid red; */
+ 
   margin: 0px;
   padding: 15px;
   font-size: 30px;
@@ -118,14 +120,14 @@ body {
   cursor: pointer;
 }
 .espacio-habitaciones{
-  /* border: 1px solid rgb(176, 166, 166); */
+
   margin: 0px;
   padding: 15px;
   font-size: 30px;
 
 }
 .habitacion-card {
-  /* border: 1px solid rgb(143, 139, 139); */
+  
   border-radius: 5px;
   background-color: #dee1e7;
 }
@@ -178,7 +180,7 @@ body {
 }
 
 .card {
-  /* border: 1px solid red; */
+
   display: flex ;
   flex-direction: row;
   width: auto;
@@ -191,10 +193,7 @@ body {
   margin-bottom: 20px;
 }
 
-.card-header {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+
 
 
 .card-delete {
@@ -202,39 +201,33 @@ body {
   display: flex;
   align-items: end;
   margin-left: auto;
-  /* width: 300px; */
+
 
   
 }
-
-
-.actualizar-btn {
-  border: 1px solid rgb(128, 128, 128);
-  background-color: #85b4e6;
-  border-radius: 3px;
-  font-size: 20px;
-  color: #e0e3e5;
-  cursor: pointer;
+.card-delete a{
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 4px;
   text-decoration: none;
-  margin-left: 800px;
+  font-size: 16px;
+}
+.actualizar-btn{
+  background-color: rgb(0, 106, 255);
+  color: white;
+  border: 1px solid black;
 }
 .eliminar-btn{
-  border: 1px solid rgb(128, 128, 128);
-  background-color: #ff3700;
-  font-size: 20px;
-  border-radius: 3px;
-  color: #e0e3e5;
-  cursor: pointer;
-  text-decoration: none;
-  margin-left: 10px;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border: 1px solid black;
+}
+.card-delete a:hover{
+  opacity: 0.8;
 }
 
-.eliminar-btn:hover,
-.actualizar-btn:hover {
-  color: #0056b3;
-}
 
-.eliminar-btn,
 .actualizar-btn {
   color: #1b1c1e;
   cursor: pointer;
@@ -249,7 +242,7 @@ body {
 .eliminar-btn:hover{
   background-color: #8e9cab;
   color: #070808;
-}
+} 
 .habitacion-card {
   display: flex;
   align-items: center;
@@ -269,58 +262,57 @@ body {
   margin-left: 10px;
 }
 .paciente {
-  /* border: 1px solid red; */
+ 
   display: flex;
   flex-direction: column;
+  margin: 10px 0 15px 5px;
   
 }
-.paciente-nombre{
-  /* border: 1px solid red; */
-  display: flex;
-  flex-direction: row;
-  width: 500px;
-}
+
 .paciente-card{
+ border: 1px solid rgb(195, 195, 195);
+ border-radius: 8px;
+ background-color: #dee2e6;
+ height:50px;
  
-  display: flex ;
-  flex-direction: row;
-  width: 90%;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-weight: bold;
-  margin-bottom: 20px;
+ padding: 15px;
+ display: flex;
+ flex-direction: row;
+ margin-bottom: 15px;
 }
-.cards-actions{
-  border: 1px solid rgb(128, 128, 128);
-  background-color: #ff3700;
+.paciente-nombre{
+ 
+  width:550px;
+  font-size: 25px;
+}
+.card-actions{
+
+  margin-left: 400px;
   font-size: 20px;
-  border-radius: 3px;
-  color: #0d0e0e;
-  cursor: pointer;
+}
+.card-actions a {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 12px;
+  
+  border-radius: 4px;
+  
   text-decoration: none;
-  margin-left: 10px;
+  font-size: 16px;
 }
 
-.paciente-actualizar-btn{
-  border: 1px solid rgb(128, 128, 128);
-  background-color: #85b4e6;
-  border-radius: 3px;
-  font-size: 20px;
-  color: #010101;
-  cursor: pointer;
-  text-decoration: none;
-  margin-left: 800px;
+.paciente-actualizar-btn {
+  background-color: rgb(0, 106, 255);
+  color: white;
+  border: 1px solid black;
 }
-.paciente-eliminar-btn{
-  border: 1px solid rgb(128, 128, 128);
-  background-color: #ff3700;
-  font-size: 20px;
-  border-radius: 3px;
-  color: #0d0e0e;
-  cursor: pointer;
-  text-decoration: none;
-  margin-left: 10px;
+
+.paciente-eliminar-btn {
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border: 1px solid black;
+}
+
+.card-actions a:hover {
+  opacity: 0.8;
 }
