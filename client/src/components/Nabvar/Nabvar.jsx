@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logoperfect.png";
+import logo from "../../assets/logo1.png";
 
 import "./navbar.css";
 
@@ -8,7 +8,7 @@ export default function Nabvar() {
   return (
     <div className="navbar-container">
       <div className="navbar">
-        <img src={logo} alt="Img Not found" width="250px" />
+        <img src={logo} alt="Img Not found" width="150px" />
 
         <div className="btn-agenda">
          

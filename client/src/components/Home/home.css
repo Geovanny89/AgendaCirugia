@@ -119,20 +119,40 @@ body {
   margin-bottom: 5px;
   cursor: pointer;
 }
-.espacio-habitaciones{
 
-  margin: 0px;
-  padding: 15px;
-  font-size: 30px;
-
-}
 .habitacion-card {
   
+  height: 50px;
   border-radius: 5px;
-  background-color: #dee1e7;
+  background-color: #ebeff7;
 }
-.habitacion-seleccionada {
-  border: 2px solid blue;
+.habita-actualizar-btn{
+  font-size: 15px;
+  margin-right: 40px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  height: 28px;
+  width: 80px;
+  text-align: center;
+}
+.habita-actualizar-btn:hover{
+  background-color: #278fffdf;
+}
+.habita-delete-btn{
+  font-size: 15px;
+  margin-right: 40px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #f90000;
+  color: white;
+  height: 28px;
+  width: 80px;
+  text-align: center;
+}
+.habita-delete-btn:hover{
+  background-color: #f64a4adf;
 }
 
 .cirujanos-list{
@@ -269,11 +289,12 @@ body {
   
 }
 
+
 .paciente-card{
  border: 1px solid rgb(195, 195, 195);
  border-radius: 8px;
  background-color: #dee2e6;
- height:50px;
+ height:40px;
  
  padding: 15px;
  display: flex;
@@ -282,11 +303,11 @@ body {
 }
 .paciente-nombre{
  
-  width:550px;
+  width:400px;
   font-size: 25px;
 }
 .card-actions{
-
+display: flex;
   margin-left: 400px;
   font-size: 20px;
 }
@@ -315,4 +336,12 @@ body {
 
 .card-actions a:hover {
   opacity: 0.8;
+}
+.paciente-detalle-btn {
+  background-color: rgb(255, 119, 0);
+  color: white;
+  border: 1px solid black;
+}
+.paciente-detalle-btn:hover{
+  background-color: rgba(255, 119, 0, 0.782);
 }

@@ -26,6 +26,22 @@ router.get('/pacien', async (req, res) => {
         res.status(500).send("Error de servidor");
     }
 });
+router.get('/pacien/name',async(req,res)=>{
+    try {
+        const name = req.query.name
+        const regex = new RegExp(name, 'i'); // Expresión regular sin distinción entre mayúsculas y minúsculas
+
+    const paciente = await pacientesSchema.find({ name: regex });
+        if(!paciente){
+            res.status(404).send("Paciente no encontrado")
+            return
+        }
+        res.status(200).send(paciente)
+    } catch (error) {
+        console.error(error);
+    res.status(500).json({ message: 'Error en el servidor' });
+    }
+})
 router.get('/pacien/:id', async (req, res) => {
     try {
         // Obtener todos los pacientes de la base de datos
@@ -51,10 +67,10 @@ router.get('/pacien/:id', async (req, res) => {
 router.post('/pacientes', async (req, res) => {
     try {
         // Obtener los datos del cuerpo de la solicitud
-        const { name, lastName, cirujanoId, procedimientoId, salaId, habitacionId, day, month, year, hour,minute } = req.body;
+        const { name, lastName,id, cirujanoId, procedimientoId, salaId, habitacionId, day, month, year, hour,minute } = req.body;
         console.log(req.body)
         // Crear un nuevo paciente
-        const paciente = new pacientesSchema({ name, lastName });
+        const paciente = new pacientesSchema({ name, lastName,id });
         paciente.day = day;
         paciente.month = month;
         paciente.year = year;

@@ -66,6 +66,20 @@ export function getPacientes() {
     })
   }
 }
+export function getPacientesName(name) {
+  return async function (dispatch) {
+    try {
+      var paciente = await axios.get(`http://localhost:3001/pacien/name?name=${name}`)
+
+      return dispatch({
+        type: 'GET_PACIENTES_NAME',
+        payload: paciente.data
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
 export function postPacientes(pacientesData) {
   return async function (dispatch) {
     try {
@@ -93,34 +107,34 @@ export function putPacientes(id, data) {
     }
   };
 }
-  export const deletePaciente = (id) => {
-    return async (dispatch) => {
-      try {
-        await axios.delete(`http://localhost:3001/paciente/${id}`);
-        dispatch({ type: 'DELETE_PACIENTE', payload: id });
-  
-      } catch (error) {
-        console.log(error);
-  
-      }
-    };
+export const deletePaciente = (id) => {
+  return async (dispatch) => {
+    try {
+      await axios.delete(`http://localhost:3001/paciente/${id}`);
+      dispatch({ type: 'DELETE_PACIENTE', payload: id });
+
+    } catch (error) {
+      console.log(error);
+
+    }
   };
+};
 
-// export function getDetail(id) {
-//   return async function(dispatch) {
-//     try {
-//       const response = await axios.get(`http://localhost:3001/pacien/${id}`);
-//       const detalle = response.data; // Accede a la propiedad 'data' del resultado
+export function getDetail(id) {
+  return async function (dispatch) {
+    try {
+      const response = await axios.get(`http://localhost:3001/pacien/${id}`);
+      const detalle = response.data; // Accede a la propiedad 'data' del resultado
 
-//       return dispatch({
-//         type: 'GET_DETAIL',
-//         payload: detalle
-//       });
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-// }
+      return dispatch({
+        type: 'GET_DETAIL',
+        payload: detalle
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
 
 export function getHabitaciones() {
   return async function (dispatch) {
@@ -134,12 +148,12 @@ export function getHabitaciones() {
 export function postHabitaciones(habitacionData) {
   return async function (dispatch) {
     try {
-      var creaHabitacion = await axios.post("http://localhost:3001/habitaciones",habitacionData)
+      var creaHabitacion = await axios.post("http://localhost:3001/habitaciones", habitacionData)
       return dispatch({
         type: 'POST_HABITACION',
         payload: creaHabitacion.data
       })
-      
+
     } catch (error) {
       console.log(error)
     }
@@ -191,12 +205,12 @@ export const getProcedimientos = () => {
 export function postProcedimientos(procedimientoData) {
   return async function (dispatch) {
     try {
-      var creaProcedimiento = await axios.post("http://localhost:3001/procedimientos",procedimientoData)
+      var creaProcedimiento = await axios.post("http://localhost:3001/procedimientos", procedimientoData)
       return dispatch({
         type: 'POST_PROCEDIMIENTO',
         payload: creaProcedimiento.data
       })
-      
+
     } catch (error) {
       console.log(error)
     }
@@ -217,7 +231,7 @@ export function putProcedimientos(id, data) {
     }
   };
 }
-export const deleteProcedimiento= (id) => {
+export const deleteProcedimiento = (id) => {
   return async (dispatch) => {
     try {
       await axios.delete(`http://localhost:3001/procedimiento/${id}`);

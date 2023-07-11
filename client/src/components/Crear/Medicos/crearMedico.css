@@ -1,9 +1,4 @@
-/* .formulario{
-    border: 1px solid rgba(0, 0, 0, 0.267);
-    border-radius: 10px;
-    width: 450px;
-    height: 250px;
-} */
+
 .crear-cirujano-form {
     border: 1px solid rgba(43, 42, 42, 0.205);
     border-radius: 10px;
@@ -27,24 +22,11 @@
     border-radius: 4px;
   }
   
-  /* .crear-cirujano-form button {
-    margin: 12px ;
-    height: 30px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .crear-cirujano-form button:hover {
-    background-color: #0056b3;
-    border: 1px solid black;
-  } */
+
 
   .button-form-cx {
    
-    display: flex;
+    display: flex; 
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -56,7 +38,7 @@
   .button-form-cx button {
     
     height: 33px;
-    width: 70px;
+    width: 75px;
     background-color: blue;
     font-size: 15px;
     color: white;
@@ -65,21 +47,22 @@
   }
   
   .button-form-cx button:hover {
-    background-color: rgb(86, 171, 199);
+    background-color: rgb(42, 31, 255);
   }
   
   .button-form-cx a {
     text-decoration: none;
+    width: 50px;
     border-radius: 8px;
     height: 15px;
     padding: 8px;
-    background-color: rgb(243, 239, 247);
-    border: 1px solid rgba(43, 42, 42, 0.205);
-    color: black;
+    background-color: blue;
+    border: 1px solid rgba(0, 0, 255, 0.618);
+    color: rgb(255, 255, 255);
     font-size: 15px;
     margin: 10px;
   }
   
   .button-form-cx a:hover {
-    background-color: rgb(200, 200, 200);
+    background-color: rgb(17, 47, 239);
   }

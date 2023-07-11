@@ -14,6 +14,7 @@ export default function CrearPacientes() {
 
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [id, setId] = useState('');
   const [cirujanoId, setCirujanoId] = useState('');
   const [prodecimientoId,setProcedimientoId]=useState('');
   const [salaId, setSalaId] = useState('');
@@ -36,6 +37,7 @@ export default function CrearPacientes() {
     const pacienteData = {
       name,
       lastName,
+      id,
       cirujanoId,
       prodecimientoId,
       salaId,
@@ -52,6 +54,7 @@ export default function CrearPacientes() {
     // Reinicia los campos del formulario
     setName('');
     setLastName('');
+    setId('');
     setCirujanoId('');
     setProcedimientoId('');
     setSalaId('');
@@ -74,6 +77,10 @@ export default function CrearPacientes() {
       <label>
         Apellido:
         <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+      </label>
+      <label>
+        Identificación:
+        <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
       </label>
      </div>
       <div className='form-vista'>
@@ -142,7 +149,7 @@ export default function CrearPacientes() {
       </label>
       </div>
           
-          <div className='botones'>
+          <div className='botones'> 
           <button type="submit">Guardar</button>
       <a className="volver-button" href="/">Volver</a>
           </div>

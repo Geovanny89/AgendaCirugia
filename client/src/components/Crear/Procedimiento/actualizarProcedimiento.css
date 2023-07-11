@@ -1,14 +1,54 @@
 .form-procedi{
     max-width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
     background-color: #f2f2f2;
     border: 1px solid #ccc;
     border-radius: 4px;
-   
+    display: flex;
+    flex-direction: row;
+    
 
 }
-.proce-name label{
-    display: block;
-    margin-bottom: 10px;
+.proce-name{
+    display: flex;
+    gap: 5px;
+}
+.proce-name input{
+  
+    border-radius: 8px;
+    width: 350px;
+}
+.proce-name input:hover{
+    background-color: rgb(200, 239, 239);
+}
+
+.proce-boton{
+    margin-left: 510px;
+}
+.proce-boton button{
+    width: 80px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: blue;
+    color: white;
+}
+.proce-boton button:hover{
+    background-color: rgba(0, 0, 255, 0.632);
+}
+.bt-actualizar{
+    
+    
+    border: 1px solid ;
+    border-radius: 8px;
+    color: white;
+    background-color: blue;
+    font-size: 15px;
+    margin: 0 10px;
+    padding: 6.5px 15px;
+    text-decoration: none;
+
+}
+.bt-actualizar:hover{
+   background-color:  rgba(0, 0, 255, 0.632);
 }

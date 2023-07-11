@@ -3,9 +3,11 @@
 const initialState = {
     profesionales: [],
     pacientes: [],
+    detail:[],
     allHabitaciones: [],
     procedimientos: [],
     allSalas: [],
+    estado:[]
 
 }
 function rootreducer(state = initialState, action) {
@@ -47,6 +49,26 @@ function rootreducer(state = initialState, action) {
                 ...state,
                 pacientes: action.payload
             }
+            // case 'GET_PACIENTES_NAME':
+            //     let filterNombre = action.payload === "" ? state.pacientes :
+            //       state.pacientes.filter((pacien) =>
+            //         pacien.name.toLowerCase().includes(String(action.payload).toLowerCase())
+            //       );
+            //     return {
+            //       ...state,
+            //       pacientes: filterNombre
+            //     };
+            case 'GET_PACIENTES_NAME':
+                return{
+                    ...state,
+                    pacientes:action.payload
+                }
+              
+            case 'GET_DETAIL':
+                return{
+                    ...state,
+                    detail:action.payload
+                }
         case 'POST_PACIENTE':
             return {
                 ...state,

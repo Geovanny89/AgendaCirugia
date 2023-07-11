@@ -7,6 +7,9 @@ const pacientesSchema = mongoose.Schema({
     lastName: {
         type: String
     },
+    id:{
+        type:Number
+    },
     phone: {
         type: Number
     },

@@ -1,0 +1,37 @@
+.barra {
+    width: 30%;
+    margin: 5px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .barra ul {
+   
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  
+  .barra ul li a {
+    margin-left: 5px;
+    margin-right: 1px;
+    margin-top: 0;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: lightblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .barra ul li a:hover {
+    background-color: blueviolet
+  }
+  

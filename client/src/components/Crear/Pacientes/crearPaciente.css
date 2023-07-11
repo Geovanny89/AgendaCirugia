@@ -92,18 +92,21 @@
     gap: 5px;
   }
   .volver-button {
-    display: inline-block;
-    background-color: #f44336;
-    color: white;
-    /* font-size: 18px; */
-    
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 0px;
-    text-decoration: none;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2cc5e1;
+  color: white;
+  width: 70px;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0px;
+  text-decoration: none;
+  text-align: center;
   }
   
   .volver-button:hover {
-    background-color: #d32f2f;
+    background-color: #2f45d3;
   }

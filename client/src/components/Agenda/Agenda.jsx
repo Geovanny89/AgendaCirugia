@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getPacientes } from "../../redux/action";
 import "react-calendar/dist/Calendar.css";
-import logo from "../../assets/logoperfect.png";
+import logo from "../../assets/logo1.png";
 import Card from "../Card/Card";
 import ReactCalendar from "react-calendar";
 import "./agenda.css";

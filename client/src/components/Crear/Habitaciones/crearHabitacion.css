@@ -1,8 +1,9 @@
 .habitacion-form{
     border: 1px solid rgba(43, 42, 42, 0.205);
     border-radius: 10px;
-    background-color: rgb(243, 239, 247);
+    background-color: rgba(255, 255, 255, 0.858);
     width: 100%;
+    height: 100px;
     display: flex;
     flex-direction: row;
     margin: 10px auto;
@@ -31,7 +32,7 @@
 
 .boton-habi button{
     height: 30px;
-    width: 70px;
+    width: 80px;
     background-color: blue;
     font-size: 15px;
     color:white;
@@ -39,7 +40,7 @@
     margin: 15px;
 }
 .boton-habi button:hover{
-    background-color: rgb(86, 171, 199);
+    background-color: rgba(0, 42, 251, 0.885);
 }
 .button-form{
     text-decoration: none;
@@ -48,8 +49,8 @@
     width: 70px;
     margin-top: 16px;
     margin-right: 25px;
-    background-color: rgb(130, 130, 236);
-    color: rgb(22, 22, 22);
+    background-color: rgb(0, 38, 255);
+    color: rgb(255, 249, 249);
     font-size: 18px;
     text-align: center; /* Alinea el texto en el centro */
   padding: 4px 0px 3px 4px; /* Añade una separación alrededor del texto */
@@ -58,6 +59,6 @@
 }
 
 .button-form:hover{
-   background-color: rgb(90, 168, 246);
-   border: 1px solid black;
+   background-color:  rgba(0, 42, 251, 0.885);;
+   border: 1px solid black; 
 }

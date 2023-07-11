@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { putPacientes, getProfesionales, getProcedimientos, getSalas, getHabitaciones } from '../../../redux/action/index';
-import './actualizar.css'
+import './CrearPacientes'
 
 
 export default function ActualizarPaciente({ pacienteId }) {
@@ -54,18 +54,21 @@ export default function ActualizarPaciente({ pacienteId }) {
     
   
     return (
-        <div className='form-contain'>
+        <div className='form-container'>
             {showForm && (
         <form onSubmit={handleSubmit}>
-         
-        <label>
+         <div className='form-name'>
+         <label>
           Nombre:
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+          <input type="text" value={name} placeholder=' Nombre' onChange={(e) => setName(e.target.value)} />
         </label>
         <label>
           Apellido:
-          <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+          <input type="text" placeholder=" Apellido" value={lastName} onChange={(e) => setLastName(e.target.value)} />
         </label>
+         </div>
+        <div className='form-vista'>
+
         <label>
           Cirujano:
           <select value={cirujanoId} onChange={(e) => setCirujanoId(e.target.value)}>
@@ -88,6 +91,8 @@ export default function ActualizarPaciente({ pacienteId }) {
             ))}
           </select>
         </label>
+        </div>
+       <div className='form-vista-sala'>
         <label>
           Sala:
           <select value={salaId} onChange={(e) => setSalaId(e.target.value)}>
@@ -110,6 +115,10 @@ export default function ActualizarPaciente({ pacienteId }) {
             ))}
           </select>
         </label>
+
+       </div>
+        <div className='form-vista-fecha'>
+
         <label>
           Día:
           <input type="text" value={day} onChange={(e) => setDay(e.target.value)} />
@@ -130,8 +139,12 @@ export default function ActualizarPaciente({ pacienteId }) {
           Minuto:
           <input type="text" value={minute} onChange={(e) => setMinute(e.target.value)} />
         </label>
+        </div>
+        <div className='botones'>
           <button type="submit">Guardar</button>
-          <a href="/">Volver</a>
+          <a className="volver-button" href="/">Volver</a>
+
+        </div>
         </form>
       ) }
         </div>

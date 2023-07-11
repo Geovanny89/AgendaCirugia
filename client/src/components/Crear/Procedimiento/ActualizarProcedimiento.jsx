@@ -31,13 +31,14 @@ export default function ActualizarProcedimiento({ id }) {
                     <input
                         type="text"
                         name="name"
+                        placeholder="Nombre Procedimiento"
                         value={procedimientoData.name}
                         onChange={handleInputChange}
                     />
                 </div>
                 <div className="proce-boton">
                     <button type="submit">Actualizar</button>
-                    <a href="/">Volver</a>
+                    <a className="bt-actualizar" href="/">Volver</a>
 
                 </div>
             </form>
