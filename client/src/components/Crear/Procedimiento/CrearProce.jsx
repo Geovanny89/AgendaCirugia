@@ -13,7 +13,12 @@ export default function CrearProce() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    
     const procedimientoData = { name: nombre }; // Datos del procedimiento a enviar
+    if (!procedimientoData.name) {
+      alert('Por favor, ingresa un nombre de procedimiento');
+      return;
+    }
     dispatch(postProcedimientos(procedimientoData)); // Llama a la acción postProcedimientos con los datos del procedimiento
     setNombre(""); // Limpia el campo de nombre después de enviar el formulario
   };

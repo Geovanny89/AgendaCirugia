@@ -17,6 +17,11 @@ export default function ActualizarProcedimiento({ id }) {
     };
     const handleSubmit = (event) => {
         event.preventDefault();
+        if (!procedimientoData.name) {
+            alert('Por favor, ingresa un nombre de procedimiento');
+            return;
+          }
+        
         dispatch(putProcedimientos(id, procedimientoData)); // Utiliza putHabitacion en lugar de putHabitaciones
 
 

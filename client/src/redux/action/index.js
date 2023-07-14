@@ -97,6 +97,7 @@ export function putPacientes(id, data) {
   return async function (dispatch) {
     try {
       const response = await axios.put(`http://localhost:3001/${id}`, data);
+      console.log(response)
       dispatch({
         type: 'PUT_PACIENTE',
         payload: response.data
@@ -255,3 +256,21 @@ export const getSalas = () => {
     }
   };
 };
+//estado del paciente 
+// export const updatePacienteEstado = (pacienteId, estado) => {
+//   return async function(dispatch) {
+//     try {
+//       const response = await axios.put(`http://localhost:3001/pacientes/${pacienteId}`, { estado });
+//       console.log(response)
+//       dispatch({
+//         type: 'UPDATE_PACIENTE_ESTADO',
+//         payload: {
+//           pacienteId,
+//           estado: response.data.estado
+//         }
+//       });
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+// };

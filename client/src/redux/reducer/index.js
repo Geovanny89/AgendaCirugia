@@ -7,7 +7,7 @@ const initialState = {
     allHabitaciones: [],
     procedimientos: [],
     allSalas: [],
-    estado:[]
+
 
 }
 function rootreducer(state = initialState, action) {
@@ -64,11 +64,12 @@ function rootreducer(state = initialState, action) {
                     pacientes:action.payload
                 }
               
-            case 'GET_DETAIL':
-                return{
-                    ...state,
-                    detail:action.payload
-                }
+                case 'GET_DETAIL':
+                    const { _id, createdAt, updatedAt, ...detailData } = action.payload;
+                    return {
+                      ...state,
+                      detail: detailData
+                    }
         case 'POST_PACIENTE':
             return {
                 ...state,
@@ -159,10 +160,28 @@ function rootreducer(state = initialState, action) {
             return {
                 ...state,
                 allSalas: action.payload
+            };
+         //Estado del Paciente   
+         
+         default:
+             return state;
             }
-
-        default:
-            return state;
-    }
 }
 export default rootreducer;
+
+// case 'UPDATE_PACIENTE_ESTADO':
+//     const updaPacientes = state.pacientes.map(paciente => {
+//       if (paciente.id === action.payload.pacienteId) {
+//         return {
+//           ...paciente,
+//           estado: action.payload.estado
+//         };
+//       }
+//       return paciente;
+//     });
+  
+//     return {
+//       ...state,
+//       pacientes: updaPacientes
+//   };
+   

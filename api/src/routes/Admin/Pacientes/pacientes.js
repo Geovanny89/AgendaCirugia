@@ -106,7 +106,7 @@ router.post('/pacientes', async (req, res) => {
 router.put('/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const { name, lastName, cirujanoId, procedimientoId, salaId, habitacionId, day, month, year, hour,minute } = req.body;
+        const { name, lastName,estado, cirujanoId, procedimientoId, salaId, habitacionId, day, month, year, hour,minute } = req.body;
 
         // Verificar si existe el paciente con el ID proporcionado
         const paciente = await pacientesSchema.findById(id);
@@ -117,6 +117,7 @@ router.put('/:id', async (req, res) => {
         // Actualizar los campos del paciente
         paciente.name = name;
         paciente.lastName = lastName;
+        paciente.estado = estado;
         paciente.day = day;
         paciente.month = month;
         paciente.year = year;

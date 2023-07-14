@@ -16,6 +16,11 @@ const pacientesSchema = mongoose.Schema({
     email: {
         type: String
     },
+    estado: {
+        type: String,
+        enum: ['preparación', 'recuperación', 'procedimiento'],
+        default: 'preparación'
+    },
     cirujano: { type: Schema.Types.ObjectId, ref: 'Cirujano' },
     procedimiento: { type: Schema.Types.ObjectId, ref: 'Procedimiento' },
     sala: { type: Schema.Types.ObjectId, ref: 'Salas' },

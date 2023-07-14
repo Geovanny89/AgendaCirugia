@@ -20,6 +20,29 @@ export default function CrearCirujano() {
  
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!input.name || !input.lastName || !input.email) {
+      alert('Por favor, completa todos los campos');
+      return;
+    }
+    const nameRegex = /^[A-Za-z]+$/;
+    if (!nameRegex.test(input.name)) {
+      alert('Por favor, ingresa un nombre válido (solo letras)');
+      return;
+    }
+  
+    // Verificar que el campo de apellido solo contenga letras
+    const lastNameRegex = /^[A-Za-z]+$/;
+    if (!lastNameRegex.test(input.lastName)) {
+      alert('Por favor, ingresa un apellido válido (solo letras)');
+      return;
+    }
+  
+    // Verificar formato de correo electrónico
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(input.email)) {
+      alert('Por favor, ingresa un correo electrónico válido');
+      return;
+    }
     dispatch(postCirujanos(input));
     setInput({ name: '', lastName: '', email: '' });
     setSuccess(true);
@@ -66,7 +89,7 @@ export default function CrearCirujano() {
         </div>
         <div className='button-form-cx'>
         <button type="submit">Crear </button>
-        <a className='link-button-cx' href="/">Cerrar</a>
+        <a href="/">Cerrar</a>
 
         </div>
        

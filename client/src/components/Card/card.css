@@ -28,9 +28,14 @@
 }
 .vista-hora{
 
-  width:80px;
+  width:100px;
+}
+.vista-fecha{
+  width: 200px;
+  /* margin-right: 25px; */
 }
 .retro-name {
+  
   font-weight: bold;
 }
 
@@ -53,4 +58,25 @@
   color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
+}
+.estado-button {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.estado-preparacion {
+  border: 1px solid black;
+  background-color: yellow;
+}
+
+.estado-procedimiento {
+  border: 1px solid black;
+  background-color: green;
+}
+
+.estado-recuperacion {
+  border: 1px solid black;
+  background-color: blue;
 }

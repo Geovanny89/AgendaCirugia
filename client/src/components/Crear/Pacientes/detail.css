@@ -1,4 +1,4 @@
-.detail-paciente{
+/* .detail-paciente{
     display: flex;
     flex-direction: row;
     font-size: 30px;
@@ -37,7 +37,7 @@ color: rgb(0, 0, 0);
     margin-left: 15px;
     gap: 200px;
 }
-  
+   */
  /* .detalle-paciente-id{
     border: 1px solid rgb(197, 193, 193);
     border-radius: 8px;
@@ -49,7 +49,7 @@ color: rgb(0, 0, 0);
     gap: 250px;
     
  } */
- .detalle-paciente-id {
+ /* .detalle-paciente-id {
     border: 1px solid rgb(197, 193, 193);
     border-radius: 8px;
     height: 55px;
@@ -76,4 +76,86 @@ color: rgb(0, 0, 0);
     gap: 250px;
     align-items: center;
   
- }
+ } */
+ .card-detalle-paciente {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 98%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .detail-paciente {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .button-cerrar-x{
+    text-decoration: none;
+    border-radius: 8px;
+    height: 25px;
+    width: 25px;
+    margin-top: 15px;
+    margin-right: 25px;
+    background-color: rgb(130, 130, 236);;
+    color: rgb(13, 15, 16);
+    font-size: 18px;
+    text-align: center; /* Alinea el texto en el centro */
+  padding: 4px 4px 4px 0; /* Añade una separación alrededor del texto */
+  line-height: 1.3;
+    
+}
+.button-cerrar-x:hover{
+   background-color: rgb(90, 168, 246);
+   border: 1px solid black;
+}
+  
+  .detalle-nombre{
+    border:1px solid #cfcccc;
+    border-radius: 8px;
+    background-color: #eee8e8;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+  }
+  .detalle-paciente-id{
+    border:1px solid #cfcccc;
+    background-color: #eee8e8;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+  }
+  .detalle-paciente-proce {
+    border:1px solid #cfcccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-color: #eee8e8;
+  }
+  
+  .detalle-paciente-id,
+  .detalle-paciente-proce {
+    margin-top: 10px;
+  }
+  
+  .detalle-nombre span,
+  .detalle-paciente-id p,
+  .detalle-paciente-proce p {
+    flex: 1;
+  }
+  
+  .detalle-nombre span:not(:last-child),
+  .detalle-paciente-id p:not(:last-child),
+  .detalle-paciente-proce p:not(:last-child) {
+    margin-right: 10px;
+  }
+  

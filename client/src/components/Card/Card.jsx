@@ -1,19 +1,29 @@
 
 
-import React, { useState } from 'react';
-// import { updatePacienteEstado } from '../../redux/action/index';
+import React from 'react';
+
 import './card.css';
-import { useDispatch } from 'react-redux';
-// import logo from '../../assets/logoperfect.png';
 
-export default function Card({pacienteId, name, lastName, cirujanoId, procedimientId, salaId, day, month, year, hour,minute }) {
-  const [status, setStatus] = useState('recuperacion');
-  const dispatch = useDispatch();
 
-  // const handleEstadoClick = (estado) => {
-  //   dispatch(updatePacienteEstado(pacienteId, estado));
-  // };
 
+export default function Card({ name, lastName,estado, cirujanoId, procedimientId, salaId, day, month, year, hour,minute }) {
+
+  let estadoColorClass = '';
+
+  switch (estado) {
+    case 'preparación':
+      estadoColorClass = 'estado-preparacion';
+      break;
+    case 'procedimiento':
+      estadoColorClass = 'estado-procedimiento';
+      break;
+    case 'recuperación':
+      estadoColorClass = 'estado-recuperacion';
+      break;
+    default:
+      break;
+  }
+  const formattedMinute = String(minute).padStart(2, '0');
   return (
     <div className='vista'>
       <div className='vista-nombre'>
@@ -42,47 +52,21 @@ export default function Card({pacienteId, name, lastName, cirujanoId, procedimie
         {salaId}
         </h3>
       </div>
-      <div>
+      <div className='vista-fecha'>
         <span className='retro-name'>Fecha : </span>
         <h3>{day + '/' + month + '/' + year}</h3>
       </div>
       <div className='vista-hora'>
         <span className='retro-name'>Hora : </span>
-        <h3>{hour +':'+ minute}</h3>
+        <h3>{hour + ':' + formattedMinute}</h3>
       </div>
-      
-      {/* <h2>{habitacionId}</h2> */}
+      <div >
+        <span>Estado:</span>
+        <h3 className={`estado-button ${estadoColorClass}`}>{estado}</h3>
+      </div>
+     
       <br />
-      <div>
-        <span className='retro-name' >Estado :</span>
-        <h3>
-        {status === 'preparacion' && (
-        <a className="boton-preparacion" >Preparación</a>
-      )}
-      {status === 'procedimiento' && (
-        <a className="boton-procedimiento">Procedimiento</a>
-      )}
-      {status === 'recuperacion' && (
-        <a className="boton-recuperacion">Recuperación</a>
-      )}
-        </h3>
-      </div>
-      {/* <span className='retro-name' >Estado :</span>
-      {status === 'preparacion' && (
-      <a className="boton-preparacion" onClick={() => handleEstadoClick('preparacion')}>
-        Preparación
-      </a>
-    )}
-    {status === 'procedimiento' && (
-      <a className="boton-procedimiento" onClick={() => handleEstadoClick('procedimiento')}>
-        Procedimiento
-      </a>
-    )}
-    {status === 'recuperacion' && (
-      <a className="boton-recuperacion" onClick={() => handleEstadoClick('recuperacion')}>
-        Recuperación
-      </a>
-    )} */}
+      
       
     </div>
   );
