@@ -107,7 +107,7 @@
 // }
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css";
+import "aos/dist/aos.css"
 import { useDispatch, useSelector } from "react-redux";
 import { getPacientes } from "../../redux/action";
 import "react-calendar/dist/Calendar.css";
@@ -169,7 +169,7 @@ export default function Agenda() {
         </div>
         <h1>Agenda</h1>
 
-        <a className="button" href="/">Volver</a>
+        <a className="button" href="/home">Volver</a>
       </div>
       <hr />
       <div className="vista-card">

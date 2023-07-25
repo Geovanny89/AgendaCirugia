@@ -1,5 +1,7 @@
 const { Router } = require('express')
 const habitacionesSchema = require('../../../database/habitaciones')
+const authMiddleware = require('../../../Middleware/sesion')
+const checkRol = require('../../../Middleware/rol')
 const router = Router()
 
 router.get('/habita', async (req, res) => {
@@ -16,7 +18,7 @@ router.get('/habita', async (req, res) => {
     }
 })
 
-router.get('/habita/:id', async (req, res) => {
+router.get('/habita/:id',authMiddleware, async (req, res) => {
     try {
         const {id}= req.params
         const habitaciones = await habitacionesSchema.findById(id)
@@ -30,7 +32,7 @@ router.get('/habita/:id', async (req, res) => {
         res.status(500).send("Error de servidor ")
     }
 })
-router.post('/habitaciones', async (req, res) => {
+router.post('/habitaciones',authMiddleware,checkRol(["admin"]), async (req, res) => {
     try {
         const { name } = req.body;
         if (!name) {
@@ -47,7 +49,7 @@ router.post('/habitaciones', async (req, res) => {
         res.status(500).send("Error de servidor")
     }
 })
-router.put('/habitaciones/:id', async (req, res) => {
+router.put('/habitaciones/:id',authMiddleware,checkRol(["admin"]), async (req, res) => {
     try {
         const { id } = req.params
         const habitaciones = await habitacionesSchema.findById(id)
@@ -65,7 +67,7 @@ router.put('/habitaciones/:id', async (req, res) => {
         res.status(500).send("Error de servidor ")
     }
 })
-router.delete('/habitacion/:id', async(req,res)=>{
+router.delete('/habitacion/:id',authMiddleware,checkRol(["admin"]), async(req,res)=>{
     try {
         
         const {id}= req.params

@@ -43,7 +43,7 @@ export default function ActualizarProcedimiento({ id }) {
                 </div>
                 <div className="proce-boton">
                     <button type="submit">Actualizar</button>
-                    <a className="bt-actualizar" href="/">Volver</a>
+                    <a className="bt-actualizar" href="/home">Volver</a>
 
                 </div>
             </form>

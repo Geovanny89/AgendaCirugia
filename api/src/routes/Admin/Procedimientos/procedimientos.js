@@ -1,5 +1,7 @@
 const {Router}= require('express')
-const procedimientosSchema = require('../../../database/procedimientos')
+const procedimientosSchema = require('../../../database/procedimientos');
+const authMiddleware = require('../../../Middleware/sesion');
+const checkRol = require('../../../Middleware/rol');
 const router= Router();
 
 router.get('/proce', async(req, res)=>{

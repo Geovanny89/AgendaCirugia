@@ -4,6 +4,8 @@ const Cirujano = require('../../../database/cirujano')
 const Procedimiento = require('../../../database/procedimientos')
 const Salas = require('../../../database/salas')
 const Habitaciones = require('../../../database/habitaciones')
+const authMiddleware = require('../../../Middleware/sesion')
+const checkRol = require('../../../Middleware/rol')
 
 const router = Router();
 

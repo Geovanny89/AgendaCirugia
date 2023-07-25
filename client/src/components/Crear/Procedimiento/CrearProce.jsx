@@ -39,7 +39,7 @@ export default function CrearProce() {
           </div>
           <div className="boton-proce">
           <button type="submit">Crear</button>
-          <a className="button-cerrar" href="/">Cerrar</a>
+          <a className="button-cerrar" href="/home">Cerrar</a>
           </div>
           
 

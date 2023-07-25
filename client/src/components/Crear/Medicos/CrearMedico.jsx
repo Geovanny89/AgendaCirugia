@@ -1,12 +1,16 @@
 
 import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { postCirujanos } from '../../../redux/action';
+
 import './crearMedico.css'
+
 
 export default function CrearCirujano() {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+ 
   const [input, setInput] = useState({
     name: '',
     lastName: '',
@@ -18,20 +22,24 @@ export default function CrearCirujano() {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
  
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
+    if (!user.rol.includes('admin')) {
+      alert('No tienes permisos para crear cirujanos');
+      return;
+    }
     if (!input.name || !input.lastName || !input.email) {
       alert('Por favor, completa todos los campos');
       return;
     }
-    const nameRegex = /^[A-Za-z]+$/;
+    const nameRegex = /^[A-Za-z\s]+$/;
     if (!nameRegex.test(input.name)) {
       alert('Por favor, ingresa un nombre válido (solo letras)');
       return;
     }
   
     // Verificar que el campo de apellido solo contenga letras
-    const lastNameRegex = /^[A-Za-z]+$/;
+    const lastNameRegex =/^[A-Za-z\s]+$/;
     if (!lastNameRegex.test(input.lastName)) {
       alert('Por favor, ingresa un apellido válido (solo letras)');
       return;
@@ -43,16 +51,20 @@ export default function CrearCirujano() {
       alert('Por favor, ingresa un correo electrónico válido');
       return;
     }
-    dispatch(postCirujanos(input));
-    setInput({ name: '', lastName: '', email: '' });
-    setSuccess(true);
+    
+  
+      dispatch(postCirujanos(input));
+      setInput({ name: '', lastName: '', email: '' });
+      setSuccess(true);
+      // Resto del código...
+    
   };
   
   return (
     <div className='formulario' >
        {success && (
         <div className='success-message'>
-          ¡El médico se creó o actualizó exitosamente!
+          ¡El médico se creó exitosamente!
         </div>
       )}
 
@@ -89,7 +101,7 @@ export default function CrearCirujano() {
         </div>
         <div className='button-form-cx'>
         <button type="submit">Crear </button>
-        <a href="/">Cerrar</a>
+        <a href="/home">Cerrar</a>
 
         </div>
        

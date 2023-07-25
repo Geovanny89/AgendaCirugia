@@ -5,8 +5,6 @@ import Nabvar from "../Nabvar/Nabvar";
 import {
   getProfesionales,
   deleteCirujano,
-  getHabitaciones,
-  deleteHabitacion,
   getProcedimientos,
   deleteProcedimiento,
   getPacientes,
@@ -16,7 +14,6 @@ import {
 import "./home.css";
 import CrearMedico from "../Crear/Medicos/CrearMedico";
 import ActualizarCirujano from "../Crear/Medicos/ActualizarMedico";
-import CrearHabitaciones from "../Crear/Habitaciones/CrearHabitaciones";
 import CrearProce from "../Crear/Procedimiento/CrearProce";
 import ActualizarProcedimiento from "../Crear/Procedimiento/ActualizarProcedimiento";
 import CrearPacientes from "../Crear/Pacientes/CrearPacientes";
@@ -25,63 +22,44 @@ import DetallePaciente from "../../components/Crear/Pacientes/DetallePaciente";
 import Paginado from "../Paginado/Paginado";
 import SearchBar from "../SearBar/SearchBar";
 
-
 export default function Home() {
   const [cirujanosMenuOpen, setCirujanosMenuOpen] = useState(false);
   const [pacientesMenuOpen, setPacientesMenuOpen] = useState(false);
-  const [habitacionesMenuOpen, setHabitacionesMenuOpen] = useState(false);
   const [procedimientosMenuOpen, setProcedimientosMenuOpen] = useState(false);
   const [crearCirujanoVisible, setCrearCirujanoVisible] = useState(false);
-  const [mostrarFormulario, setMostrarFormulario] = useState(false);
   const [verCirujanos, setVerCirujanos] = useState(false);
   const [actualizarMedicoVisible, setActualizarMedicoVisible] = useState(false);
   const [cirujanoId, setCirujanoId] = useState(null);
-  const [verHabitaciones, setVerHabitaciones] = useState(false);
-  const [crearHabitacionVisible, setCrearHabitacionVisible] = useState(false);
   const [verProcedimientos, setVerProcedimientos] = useState(false);
   const [crearProcedimientoVisible, setCrearProcedimientoVisible] = useState(false);
   const [actualizarProcedimiento, setActualizarProcedimiento] = useState(false);
   const [procedimientoId, setProcedimientoId] = useState(null);
   const [verPacientes, setVerPacientes] = useState(false);
   const [crearPacienteVisible, setCrearPacienteVisible] = useState(false);
-  const [actualizarPacienteVisible, setActualizarPacienteVisible] = useState(false);
   const [pacienteId, setPacienteId] = useState(null);
   const [activeSection, setActiveSection] = useState(null);
   const [actualizarPacienteId, setActualizarPacienteId] = useState(null);
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const [verDetallePaciente, setVerDetallePaciente] = useState(false);
   const [pacienteIdSeleccionado, setPacienteIdSeleccionado] = useState(null);
 
-  // const [searchId, setSearchId] = useState("");
-
-
-
-
-
   const dispatch = useDispatch();
   const profesionales = useSelector((state) => state.profesionales);
-  const allHabitaciones = useSelector((state) => state.allHabitaciones);
   const procedimientos = useSelector((state) => state.procedimientos);
   const pacientes = useSelector((state) => state.pacientes);
 
-  //PAGINADO pacientes
-
-  const [currentPage, setCurrentPage] = useState(1)//pagina actual que arranca en 1
-  const [pacientPorPage, setPacientPorPage] = useState(5) // muestro 8 raza de dogs por pagina
-  const indexOfLastPacien = currentPage * pacientPorPage //8 razas de perros
-  const indexOfFirstPacien = indexOfLastPacien - pacientPorPage //
-  const currentPacientes = pacientes.slice(indexOfFirstPacien, indexOfLastPacien)
-
-
-
-
+  // PAGINADO pacientes
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pacientPorPage, setPacientPorPage] = useState(5);
+  const indexOfLastPacien = currentPage * pacientPorPage;
+  const indexOfFirstPacien = indexOfLastPacien - pacientPorPage;
+  const currentPacientes = pacientes.slice(indexOfFirstPacien, indexOfLastPacien);
 
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
   useEffect(() => {
     dispatch(getProfesionales());
-    dispatch(getHabitaciones());
     dispatch(getProcedimientos());
     dispatch(getPacientes());
   }, [dispatch]);
@@ -89,17 +67,11 @@ export default function Home() {
   const toggleCirujanosMenu = () => {
     setActiveSection("cirujanos");
     setCirujanosMenuOpen(!cirujanosMenuOpen);
-
   };
 
   const togglePacientesMenu = () => {
     setActiveSection("pacientes");
     setPacientesMenuOpen(!pacientesMenuOpen);
-  };
-
-  const toggleHabitacionesMenu = () => {
-    setActiveSection("habitacion");
-    setHabitacionesMenuOpen(!habitacionesMenuOpen);
   };
 
   const toggleProcedimientosMenu = () => {
@@ -109,7 +81,6 @@ export default function Home() {
 
   const toggleCrearCirujano = () => {
     setCrearCirujanoVisible(!crearCirujanoVisible);
-    setMostrarFormulario(true);
     setActiveSection(null);
   };
 
@@ -128,23 +99,6 @@ export default function Home() {
   const handleActualizarCirujano = (id) => {
     setCirujanoId(id);
     setActualizarMedicoVisible(true);
-    setActiveSection(null);
-  };
-
-  const handleMostrarHabitaciones = () => {
-    setVerHabitaciones(!verHabitaciones);
-    setActiveSection(null);
-  };
-
-  const handleEliminarHabitacion = (id) => {
-    const confirmDelete = window.confirm("¿Estás seguro de que deseas eliminar esta habitación?");
-    if (confirmDelete) {
-      dispatch(deleteHabitacion(id));
-    }
-  };
-
-  const toggleCrearHabitacion = () => {
-    setCrearHabitacionVisible(!crearHabitacionVisible);
     setActiveSection(null);
   };
 
@@ -173,7 +127,6 @@ export default function Home() {
 
   const toggleCrearPaciente = () => {
     setCrearPacienteVisible(!crearPacienteVisible);
-    setFormSubmitted(false);
     setActiveSection(null);
   };
 
@@ -245,26 +198,6 @@ export default function Home() {
           </section>
           <hr />
           <section className="menu">
-            <div onClick={toggleHabitacionesMenu}>
-              <p>Habitaciones</p>
-              {habitacionesMenuOpen && (
-                <ul>
-                  <li>
-                    <a href="#" onClick={handleMostrarHabitaciones}>
-                      Habitaciones
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" onClick={toggleCrearHabitacion}>
-                      Crear Habitación
-                    </a>
-                  </li>
-                </ul>
-              )}
-            </div>
-          </section>
-          <hr />
-          <section className="menu">
             <div onClick={toggleProcedimientosMenu}>
               <p>Procedimiento</p>
               {procedimientosMenuOpen && (
@@ -286,7 +219,7 @@ export default function Home() {
         </section>
 
         <section className="espacio">
-          {activeSection === "cirujanos" && verCirujanos &&(
+          {activeSection === "cirujanos" && verCirujanos && (
             <div className="card-container">
               {profesionales.map((profesional) => (
                 <div className="card" key={profesional._id}>
@@ -312,32 +245,9 @@ export default function Home() {
             </div>
           )}
 
-          {/* {crearCirujanoVisible && <CrearMedico />} */}
           {activeSection === 'cirujanos' && crearCirujanoVisible && <CrearMedico />}
           {actualizarMedicoVisible && <ActualizarCirujano id={cirujanoId} />}
-          {/* {activeSection === 'cirujanos' && actualizarMedicoVisible && <ActualizarCirujano id={cirujanoId} />} */}
-
-          {activeSection === 'habitacion' && verHabitaciones && (
-            <div className="habitaciones">
-              {allHabitaciones.sort((a, b) => a.name.localeCompare(b.name)).map((habitacion) => (
-                <div key={habitacion._id} className="habitacion-card">
-                  <p>{habitacion.name}</p>
-                  <div className="habitacion-actions">
-                    <a className="habita-actualizar-btn">Actualizar</a>
-                    <a
-                      className="habita-delete-btn"
-                      onClick={() => handleEliminarHabitacion(habitacion._id)}
-                    >
-                      Eliminar
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-          {activeSection === 'habitacion' && crearHabitacionVisible && <CrearHabitaciones />}
-
-
+ 
           {activeSection === "procedimiento" && verProcedimientos && (
             <div className="procedimientos">
               {procedimientos.map((procedimiento) => (
@@ -364,7 +274,6 @@ export default function Home() {
 
           {activeSection === 'procedimiento' && crearProcedimientoVisible && <CrearProce />}
           {actualizarProcedimiento && <ActualizarProcedimiento id={procedimientoId} />}
-
 
           {activeSection === 'pacientes' && !actualizarPacienteId && !crearPacienteVisible && !verDetallePaciente && verPacientes && (
             <div className="paciente">
@@ -407,15 +316,8 @@ export default function Home() {
           )}
 
           {activeSection === 'pacientes' && crearPacienteVisible && <CrearPacientes />}
-
-          {actualizarPacienteId && (
-            <ActualizarPaciente pacienteId={actualizarPacienteId} />
-          )}
-          {verDetallePaciente && (
-            <DetallePaciente pacienteId={pacienteIdSeleccionado} />
-          )}
-
-
+          {actualizarPacienteId && <ActualizarPaciente pacienteId={actualizarPacienteId} />}
+          {verDetallePaciente && <DetallePaciente pacienteId={pacienteIdSeleccionado} />}
         </section>
       </div>
     </div>

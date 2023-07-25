@@ -24,14 +24,14 @@ export default function ActualizarCirujano({id}) {
       alert('Por favor, completa todos los campos');
       return;
     }
-    const nameRegex = /^[A-Za-z]+$/;
+    const nameRegex = /^[A-Za-z\s]+$/;
     if (!nameRegex.test(input.name)) {
       alert('Por favor, ingresa un nombre válido (solo letras)');
       return;
     }
   
     // Verificar que el campo de apellido solo contenga letras
-    const lastNameRegex = /^[A-Za-z]+$/;
+    const lastNameRegex = /^[A-Za-z\s]+$/;
     if (!lastNameRegex.test(input.lastName)) {
       alert('Por favor, ingresa un apellido válido (solo letras)');
       return;
@@ -85,7 +85,7 @@ export default function ActualizarCirujano({id}) {
         </div>
         <div className='button-form-cx'>
         <button type="submit">Actualizar</button>
-       <a className='link-button' href="/">Cerrar</a>
+       <a className='link-button' href="/home">Cerrar</a>
           
         </div>
       </form>

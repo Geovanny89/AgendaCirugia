@@ -1,5 +1,60 @@
 import axios from 'axios'
+import { setAuthToken } from '../../Auth/Auth'; // creado
 
+
+//-----------------------------------------------------------------------------------
+
+export function postRegister(newUser){
+  return async function(dispatch){
+    const response = await axios.post("http://localhost:3001/register",newUser);
+    console.log(response)
+    dispatch({
+
+        type: 'POST_REGISTER',
+        payload:response.data
+      
+    })
+  }
+}
+
+export const setSession = (userData) => {
+  // Verifica si userData tiene un atributo 'rol', si no, establece el rol como una cadena vacía
+  const userRole = userData?.rol || '';
+  // console.log(userRole)
+
+  // Crea un nuevo objeto userData con el atributo 'rol' configurado
+  const userDataWithRole = { ...userData, rol: userRole };
+  // console.log(userDataWithRole)
+
+  return {
+    type: "SET_SESSION",
+    payload: userDataWithRole,
+  };
+};
+
+export function postLogin(formData) {
+  return async function(dispatch) {
+    try {
+      const response = await axios.post('http://localhost:3001/login', formData);
+      const token = response.data.token;
+      setAuthToken(token); // Almacena el token JWT en el cliente
+
+      dispatch({
+        type: 'POST_LOGIN',
+        payload: response.data,
+      });
+    } catch (error) {
+      // Manejo de errores
+    }
+  };
+}
+export const logout = () => {
+  return {
+    type: 'LOGOUT',
+  };
+};
+
+//------------------------------------------------------------------------------------------------------------
 
 export function getProfesionales() {
   return async function (dispatch) {
@@ -10,6 +65,7 @@ export function getProfesionales() {
     })
   }
 }
+
 
 
 export function postCirujanos(cirujanoData) {

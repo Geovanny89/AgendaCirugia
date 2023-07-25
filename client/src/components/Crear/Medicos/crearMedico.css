@@ -38,7 +38,7 @@
   .button-form-cx button {
     
     height: 33px;
-    width: 75px;
+    width: 100px;
     background-color: blue;
     font-size: 15px;
     color: white;
@@ -56,9 +56,9 @@
     border-radius: 8px;
     height: 15px;
     padding: 8px;
-    background-color: blue;
+    background-color: rgb(135, 135, 241);
     border: 1px solid rgba(0, 0, 255, 0.618);
-    color: rgb(255, 255, 255);
+    color: rgb(8, 7, 7);
     font-size: 15px;
     margin: 10px;
   }

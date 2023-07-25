@@ -1,5 +1,7 @@
 const {Router} = require('express')
-const salasSchema = require('../../../database/salas')
+const salasSchema = require('../../../database/salas');
+const authMiddleware = require('../../../Middleware/sesion');
+const checkRol = require('../../../Middleware/rol');
 const router= Router();
 
 router.get('/allSalas', async(req,res)=>{
@@ -13,7 +15,7 @@ router.get('/allSalas', async(req,res)=>{
         res.status(500).send("Error de servidor")
     }
 })
-router.get('/salas/:id', async(req,res)=>{
+router.get('/salas/:id',authMiddleware, async(req,res)=>{
     try {
         const {id}= req.params
         const allSala= await salasSchema.findById(id)
@@ -26,7 +28,7 @@ router.get('/salas/:id', async(req,res)=>{
     }
 })
 
-router.post('/salas', async(req, res)=>{
+router.post('/salas',authMiddleware,checkRol(["admin"]), async(req, res)=>{
     try {
         const {name}= req.body
         if(!name){
@@ -44,7 +46,7 @@ router.post('/salas', async(req, res)=>{
 
 
 })
-router.put('/sala/:id',async(req, res)=>{
+router.put('/sala/:id',authMiddleware,checkRol(["admin"]),async(req, res)=>{
     try {
         const {id}= req.params
         const sala= await salasSchema.findById(id)
@@ -62,7 +64,7 @@ router.put('/sala/:id',async(req, res)=>{
         res.status(404).send("Error de servidor")
     }
 })
-router.delete('/eliminar/:id',async (req,res)=>{
+router.delete('/eliminar/:id',authMiddleware,checkRol(["admin"]),async (req,res)=>{
     try {
         const {id}= req.params
         const salaId = await salasSchema.findById(id)

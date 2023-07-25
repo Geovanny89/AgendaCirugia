@@ -88,7 +88,7 @@ const DetallePaciente = ({ pacienteId }) => {
     <div className="card-detalle-paciente">
       <div className="detail-paciente">
         <h2>Detalle del paciente</h2>
-        <a className='button-cerrar-x' href=""> x </a>
+        <a className='button-cerrar-x' href="/home"> x </a>
       </div>
       <div className="detalle-nombre">
         <span>Nombre: {name}</span>

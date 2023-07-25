@@ -1,9 +1,12 @@
 const { Router } = require('express')
-const cirujanosSchema = require('../../../database/cirujano')
+const cirujanosSchema = require('../../../database/cirujano');
+// const authMiddleware = require('../../../Middleware/sesion');
+// const checkRol = require('../../../Middleware/rol');
 const router = Router();
 
 router.get('/profesionales', async (req, res) => {
   try {
+    // const user =req.user  // obtener el usuario que hace la consulta 
     const profesional = await cirujanosSchema.find()
     if (!profesional) {
       res.status(404).send("No existen Cirujanos")

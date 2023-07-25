@@ -80,3 +80,15 @@
   border: 1px solid black;
   background-color: blue;
 }
+@media screen and (max-width: 768px) {
+  .vista {
+    flex-direction: column; /* Cambia la dirección de los elementos a columna */
+  }
+
+  /* Los elementos tendrán ancho 100% en pantallas pequeñas */
+  .vista-nombre, .vista-cirujano, .vista-procedimiento, .vista-cx, .vista-hora, .vista-fecha {
+    width: 100%;
+  }
+
+  /* Ajusta el tamaño de los botones y estados según tus necesidades */
+}

@@ -166,7 +166,7 @@ export default function ActualizarPaciente({ pacienteId }) {
           </div>
           <div className='botones'>
             <button type="submit">Guardar</button>
-            <a className="volver-button" href="/">Volver</a>
+            <a className="volver-button" href="/home">Volver</a>
 
           </div>
         </form>

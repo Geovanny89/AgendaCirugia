@@ -22,9 +22,7 @@ body {
 .habitaciones {
   margin: 15px;
 }
-.paciente{
-  margin: 15px;
-}
+
 .procedimientos {
   /* border: 1px solid red; */
   display: flex;
@@ -97,8 +95,8 @@ body {
  
   margin: 0px;
   padding: 15px;
-  font-size: 30px;
-  width: 100%;
+  /* font-size: 30px; */
+  width: 80%;
 
 }
 .espacio ul{

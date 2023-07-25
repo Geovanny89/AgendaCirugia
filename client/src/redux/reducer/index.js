@@ -1,18 +1,44 @@
+import Cookies from "js-cookie";
 
 
 const initialState = {
     profesionales: [],
     pacientes: [],
-    detail:[],
+    detail: [],
     allHabitaciones: [],
     procedimientos: [],
     allSalas: [],
+    session: null,
+    user: {},
+    rol: ""
 
 
 }
 function rootreducer(state = initialState, action) {
     switch (action.type) {
-
+        // case "SET_SESSION":
+        //     return{
+        //         ...state,
+        //         session: action.payload
+        //     }
+        case 'SET_SESSION':
+            return {
+                ...state,
+                user: action.payload,
+                rol: action.payload.rol // Asigna el rol del usuario desde la acción
+            };
+            case 'LOGOUT':
+                Cookies.remove('session')
+                return {
+                ...state,
+                session: null,
+                user: {},
+                rol: ""
+            };
+        // case 'POST_REGISTER':
+        //     return {
+        //         ...state
+        //     }
         case 'GET_PROFESIONALES':
             return {
                 ...state,
@@ -49,32 +75,24 @@ function rootreducer(state = initialState, action) {
                 ...state,
                 pacientes: action.payload
             }
-            // case 'GET_PACIENTES_NAME':
-            //     let filterNombre = action.payload === "" ? state.pacientes :
-            //       state.pacientes.filter((pacien) =>
-            //         pacien.name.toLowerCase().includes(String(action.payload).toLowerCase())
-            //       );
-            //     return {
-            //       ...state,
-            //       pacientes: filterNombre
-            //     };
-            case 'GET_PACIENTES_NAME':
-                return{
-                    ...state,
-                    pacientes:action.payload
-                }
-              
-                case 'GET_DETAIL':
-                    const { _id, createdAt, updatedAt, ...detailData } = action.payload;
-                    return {
-                      ...state,
-                      detail: detailData
-                    }
+
+        case 'GET_PACIENTES_NAME':
+            return {
+                ...state,
+                pacientes: action.payload
+            }
+
+        case 'GET_DETAIL':
+            const { _id, createdAt, updatedAt, ...detailData } = action.payload;
+            return {
+                ...state,
+                detail: detailData
+            }
         case 'POST_PACIENTE':
             return {
                 ...state,
             }
-            case 'PUT_PACIENTE':
+        case 'PUT_PACIENTE':
             const updatedPacientes = state.pacientes.map(paciente => {
                 if (paciente._id === action.payload._id) {
                     return action.payload; // Reemplaza el cirujano actualizado
@@ -86,16 +104,16 @@ function rootreducer(state = initialState, action) {
                 ...state,
                 profesionales: updatedPacientes
             };
-            case 'DELETE_PACIENTE':
-                const filteredPacientes = state.pacientes.filter(
-                    (paciente) => paciente._id !== action.payload
-                );
-    
-                return {
-                    ...state,
-                    pacientes: filteredPacientes
-                };
-    
+        case 'DELETE_PACIENTE':
+            const filteredPacientes = state.pacientes.filter(
+                (paciente) => paciente._id !== action.payload
+            );
+
+            return {
+                ...state,
+                pacientes: filteredPacientes
+            };
+
         case 'GET_HABITACION':
             return {
                 ...state,
@@ -161,27 +179,11 @@ function rootreducer(state = initialState, action) {
                 ...state,
                 allSalas: action.payload
             };
-         //Estado del Paciente   
-         
-         default:
-             return state;
-            }
+        //Estado del Paciente   
+
+        default:
+            return state;
+    }
 }
 export default rootreducer;
 
-// case 'UPDATE_PACIENTE_ESTADO':
-//     const updaPacientes = state.pacientes.map(paciente => {
-//       if (paciente.id === action.payload.pacienteId) {
-//         return {
-//           ...paciente,
-//           estado: action.payload.estado
-//         };
-//       }
-//       return paciente;
-//     });
-  
-//     return {
-//       ...state,
-//       pacientes: updaPacientes
-//   };
-   
